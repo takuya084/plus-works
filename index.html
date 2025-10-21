@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PLUS WORKS | ネットショップ制作 & E-learning</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root { --brand: #dc2626; }
+    .focus-ring:focus { outline: 3px solid rgba(220, 38, 38, .6); outline-offset: 2px; }
+    .accordion { overflow: hidden; transition: max-height 320ms ease, opacity 240ms ease, transform 240ms ease; transform-origin: top; }
+    .accordion.open { opacity: 1; }
+  </style>
+</head>
+<body class="font-sans text-gray-800 bg-white leading-relaxed">
+  <!-- Header / Global Navigation -->
+  <header class="bg-white shadow-md sticky top-0 z-10">
+    <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="#" class="text-2xl font-extrabold text-[var(--brand)]">PLUS WORKS</a>
+
+      <!-- Hamburger -->
+      <button id="navToggle" class="md:hidden inline-flex items-center justify-center w-11 h-11 rounded-xl border border-gray-200 hover:bg-gray-50 transition focus-ring" aria-controls="primaryNav" aria-expanded="false" aria-label="メニューを開閉">
+        <svg id="iconOpen" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path fill-rule="evenodd" d="M3.75 6.75A.75.75 0 0 1 4.5 6h15a.75.75 0 0 1 0 1.5h-15a.75.75 0 0 1-.75-.75zm0 5.25a.75.75 0 0 1 .75-.75h15a.75.75 0 0 1 0 1.5h-15a.75.75 0 0 1-.75-.75zm.75 4.5a.75.75 0 0 0 0 1.5h15a.75.75 0 0 0 0-1.5h-15z" clip-rule="evenodd" /></svg>
+        <svg id="iconClose" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 hidden"><path fill-rule="evenodd" d="M5.22 5.22a.75.75 0 0 1 1.06 0L12 10.94l5.72-5.72a.75.75 0 1 1 1.06 1.06L13.06 12l5.72 5.72a.75.75 0 1 1-1.06 1.06L12 13.06l-5.72 5.72a.75.75 0 0 1-1.06-1.06L10.94 12 5.22 6.28a.75.75 0 0 1 0-1.06z" clip-rule="evenodd" /></svg>
+      </button>
+
+      <!-- PC Nav -->
+      <ul class="hidden md:flex space-x-6 text-sm font-medium" id="primaryNav">
+        <li><a href="#intro" class="hover:text-[var(--brand)] transition">事業紹介</a></li>
+        <li><a href="#reason" class="hover:text-[var(--brand)] transition">なぜネットショップか</a></li>
+        <li><a href="#elearn" class="hover:text-[var(--brand)] transition">E-learning</a></li>
+        <li><a href="#service" class="hover:text-[var(--brand)] transition">代行サービス</a></li>
+        <li><a href="#projects" class="hover:text-[var(--brand)] transition">運営者も挑戦中</a></li>
+        <li><a href="#qa" class="hover:text-[var(--brand)] transition">Q&amp;A</a></li>
+      </ul>
+    </nav>
+    <!-- Mobile Nav -->
+    <div id="mobileNav" class="md:hidden border-t border-gray-200 bg-white accordion" style="max-height:0; opacity:0; transform: translateY(-4px);" aria-hidden="true">
+      <ul class="container mx-auto px-4 py-3 space-y-1 text-sm font-medium">
+        <li><a href="#intro" class="block px-3 py-2 rounded-lg hover:bg-gray-50">事業紹介</a></li>
+        <li><a href="#reason" class="block px-3 py-2 rounded-lg hover:bg-gray-50">なぜネットショップか</a></li>
+        <li><a href="#elearn" class="block px-3 py-2 rounded-lg hover:bg-gray-50">E-learning</a></li>
+        <li><a href="#service" class="block px-3 py-2 rounded-lg hover:bg-gray-50">代行サービス</a></li>
+        <li><a href="#projects" class="block px-3 py-2 rounded-lg hover:bg-gray-50">運営者も挑戦中</a></li>
+        <li><a href="#qa" class="block px-3 py-2 rounded-lg hover:bg-gray-50">Q&amp;A</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero（brand統一） -->
+    <section id="hero" class="relative isolate overflow-hidden bg-gray-900">
+      <div class="absolute inset-0 -z-10">
+        <!-- 単色ベース＋ごく薄い質感（brand統一） -->
+        <div class="absolute inset-0 bg-[var(--brand)]"></div>
+        <div class="absolute inset-0 bg-white/5 mix-blend-overlay"></div>
+      </div>
+      <div class="absolute inset-x-0 -top-1/4 -z-10 h-[50rem] w-[100rem] rotate-6 rounded-[50%] bg-white/5 blur-[150px] opacity-70"></div>
+
+      <div class="container mx-auto max-w-6xl px-4 py-16 md:py-24 bg-transparent">
+
+        <p class="mb-4 inline-flex items-center rounded-full border border-[color:rgba(220,38,38,0.5)] bg-white/15 px-7 py-2.5 text-lg font-bold text-white shadow-xl backdrop-blur-md transition duration-300 ease-in-out hover:bg-white/20 hover:border-[var(--brand)]">
+          <span class="mr-3 h-2.5 w-2.5 rounded-full bg-[var(--brand)] shadow-[0_0_12px_rgba(220,38,38,0.85)]"></span>
+          ネットにお店を持ちたい人へ
+        </p>
+
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tighter text-white">
+          <span class="block">はじめの一歩を、</span>
+          <span class="block">今ここから。</span>
+        </h1>
+
+        <p class="mt-6 max-w-2xl text-lg text-white/80">
+          E-learningで自走するか、制作代行で最短ゴールか。 2つの道から、最適解を選べます。
+        </p>
+      </div>
+    </section>
+
+    <!-- 1. まずは事業紹介 -->
+    <section id="intro" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <p class="text-sm font-semibold tracking-widest text-[var(--brand)] mb-2">SERVICES</p>
+        <!-- 見出し -->
+        <h1 class="mb-4 font-light leading-tight text-2xl md:text-3xl">
+          <span class="font-extrabold">学ぶか、任せるか</span>
+        </h1>
+
+        <div class="relative grid gap-8 md:grid-cols-2">
+          <!-- 中央の「または」ライン（brand薄色） -->
+          <div class="pointer-events-none absolute inset-y-0 left-1/2 hidden w-px -translate-x-1/2 bg-[color:rgba(220,38,38,0.18)] md:block"></div>
+          <!-- 円形の「または」バッジ（大きめ・枠にかかる） -->
+          <div class="pointer-events-none absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 md:block z-20">
+            <span class="flex h-20 w-20 items-center justify-center rounded-full bg-gray-900 text-base font-extrabold text-white shadow-xl ring-4 ring-white">
+              または
+            </span>
+          </div>
+
+          <!-- 学ぶ：E-learning -->
+          <div class="group flex flex-col rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition hover:shadow-md">
+            <div class="mb-3 inline-flex items-center gap-2 rounded-full bg-rose-50 px-4 py-2.5 text-base md:text-lg font-semibold text-rose-700 leading-none">
+              学ぶ
+            </div>
+
+            <h3 class="text-xl font-bold text-[var(--brand)] mb-2">E-learningで技術習得</h3>
+            <p class="text-gray-700">
+              「お金はかけたくない」「自分で構築・運用したい」方向け。
+              オンラインショップ運営に欠かせない技術を
+              <span class="font-semibold">幅広く・わかりやすく・低価格で</span>学べます。
+              また、サブスクリプションではなく各講座の買い切り形式なので、不要な出費を抑えながら、自分のペースで学習できます。
+            </p>
+
+            <div class="mt-5 flex items-center justify-between">
+              <p class="text-sm text-gray-600">目安：<span class="font-semibold">1,000円～</span>（各講座買い切り）</p>
+            </div>
+
+            <div class="mt-auto pt-5">
+              <a href="/e-learning"
+                 class="inline-flex items-center rounded-full border border-[var(--brand)] px-4 py-2 text-sm font-semibold text-[var(--brand)] transition hover:bg-red-50">
+                詳しく見る
+              </a>
+            </div>
+          </div>
+
+          <!-- 任せる：制作代行 -->
+          <div class="group flex flex-col rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition hover:shadow-md">
+            <div class="mb-3 inline-flex items-center gap-2 rounded-full bg-sky-50 px-4 py-2.5 text-base md:text-lg font-semibold text-sky-700 leading-none">
+              任せる
+            </div>
+
+            <h3 class="text-xl font-bold text-[var(--brand)] mb-2">オリジナルECサイト制作代行</h3>
+            <p class="text-gray-700">
+              丁寧なヒアリングを重ね、できるだけご要望に沿った形で構築します。
+              制作費や公開後の運用サポートは内容に応じてご相談。
+              お互いにとって<strong>Win-Win</strong>な関係を目指します。
+            </p>
+            <p class="mt-3 text-sm text-gray-500">
+              ※ 売上アドバイス・経営コンサルは対象外です。
+            </p>
+
+            <div class="mt-5 flex items-center justify-between">
+              <p class="text-sm text-gray-600">目安：<span class="font-semibold">10万円～</span>（要件により変動）</p>
+            </div>
+
+            <div class="mt-auto pt-5">
+              <a href="/service/build-for-you"
+                 class="inline-flex items-center rounded-full border border-[var(--brand)] px-4 py-2 text-sm font-semibold text-[var(--brand)] transition hover:bg-red-50">
+                詳しく見る
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. なぜネットショップなのか（理由・根拠） -->
+    <section id="reason" class="py-20">
+      <div class="container mx-auto px-4 max-w-5xl">
+        <p class="text-sm font-semibold tracking-widest text-[var(--brand)] mb-2">REASONS</p>
+        <h2 class="text-3xl font-semibold mb-8">いま、ネットショップを持つ理由</h2>
+
+        <div class="space-y-10">
+          <div class="border-l-4 border-[var(--brand)] pl-6">
+            <h3 class="text-xl font-bold mb-2">① 副業・複業が標準に</h3>
+            <p class="text-gray-700">
+              私たちは今、時代の大きな転換点に立っています。AIの台頭や国際情勢の変化など、将来を見通すことが難しい不確実な時代です。
+              そんな中で、<span class="font-semibold">本業だけに頼る働き方</span>はリスクが高いと言えるでしょう。
+              <span class="font-semibold">本業＋副業</span>という収入の分散が、これからの安定を支える現実的な選択肢になっています。
+              <br>一方で、テクノロジーや物流の発達により、個人でも副業やネットビジネスを始めやすい環境が整ってきました。
+              まず、小さな一歩を踏み出してみることが大切だと考えます。
+            </p>
+          </div>
+
+          <div class="border-l-4 border-[var(--brand)] pl-6">
+            <h3 class="text-xl font-bold mb-2">② 全世界がマーケット</h3>
+            <p class="text-gray-700">リアル店舗は商圏が限定されますが、ネットは<span class="font-semibold">24時間×全国（海外も）</span>が基本です。少量・高付加価値の販売やロングテール商品のテストにも向きます。</p>
+          </div>
+
+        <div class="border-l-4 border-[var(--brand)] pl-6">
+          <h3 class="text-xl font-bold mb-2">③ 他社サービス利用は高コスト</h3>
+          <p class="text-gray-700">
+            他社サービスでは、月額料金＋決済手数料（例：3〜4%）が加わることが多く、運営費が継続的にかかります。Shopifyでは月額4,850円〜＋決済手数料3.55%が目安です。一方、自社ECサイトを構築すれば、こうした中間コストを削ぎ落とし、<span class="font-semibold">運営費を大幅に抑えて利益率を高める</span>ことが可能です。
+          </p>
+          <p class="mt-2 text-xs text-gray-500">
+            ※ 手数料・料金は2025年時点の公開情報をもとに記載しています。詳細は各サービスの最新情報をご確認ください。
+          </p>
+        </div>
+
+        <div class="border-l-4 border-[var(--brand)] pl-6">
+          <h3 class="text-xl font-bold mb-2">④ Amazon・楽天＋自社サイト＋SNS連携という選択肢</h3>
+          <p class="text-gray-700">
+            <span class="font-semibold">Amazonや楽天</span>は圧倒的な集客力が魅力です。
+            まずはモールで認知を広げ、<span class="font-semibold">自社サイトでブランド体験とリピート導線</span>を構築することで、
+            売上と顧客関係の両立が可能になります。
+            さらに、<span class="font-semibold">InstagramやLINEなどのSNSと連携</span>すれば、
+            顧客との接点を広げ、リピート率を高める効果も期待できます。
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 3. E-learning サイト案内 + リンク -->
+    <section id="elearn" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4 max-w-5xl">
+        <p class="text-sm font-semibold tracking-widest text-[var(--brand)] mb-2">E-LEARNING</p>
+        <h2 class="text-3xl font-semibold mb-6">作れる人になる、短尺レッスン</h2>
+
+      <!-- バナー（16:9で高さ確保・中央下ボタン） -->
+        <div class="group relative block overflow-hidden rounded-2xl shadow-md">
+          <!-- 高さ用の比率ボックス -->
+          <div class="relative w-full pt-[56.25%] sm:pt-[45%] lg:pt-[35%]">
+            <img
+              src="https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=1600&q=80"
+              alt="E-LEARNING バナー（ダミー画像）"
+              class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+            />
+
+            <!-- 中央下の「始める」ボタン -->
+            <a href="https://example.com/elearning"
+              aria-label="E-LEARNINGサイトへ"
+              class="absolute left-1/2 bottom-6 -translate-x-1/2 inline-flex min-w-[14rem] items-center justify-center rounded-full bg-white px-6 py-3 text-base font-extrabold text-[var(--brand)] shadow-lg transition hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-[var(--brand)]/30">
+              始める
+            </a>
+          </div>
+        </div>
+
+
+
+        <!-- 要点だけの説明 -->
+        <div class="mt-8 grid md:grid-cols-3 gap-6 text-sm text-gray-700">
+          <div class="p-5 bg-white rounded-xl shadow-sm">
+            <div class="text-[var(--brand)] font-bold mb-1">（１）簡潔に</div>
+            <p>１から全てを学びません。大事なところだけに絞り簡潔に学びます。</p>
+          </div>
+          <div class="p-5 bg-white rounded-xl shadow-sm">
+            <div class="text-[var(--brand)] font-bold mb-1">（２）テンポよく</div>
+            <p>だらだら長々と解説しません。言葉を厳選しテンポよく進めます。</p>
+          </div>
+          <div class="p-5 bg-white rounded-xl shadow-sm">
+            <div class="text-[var(--brand)] font-bold mb-1">（３）分かりやすく</div>
+            <p>不用意に専門用語を使いません。正確さは損なわれるかもしれませんが分かりやすさを重視します。</p>
+          </div>
+        </div>
+
+        <p class="mt-6 text-sm text-gray-600">
+          価格目安：<span class="font-semibold">1,000円～</span>（必要な講座だけをピンポイントで受講）
+        </p>
+      </div>
+    </section>
+
+    <!-- 4. 代行サービス紹介 + FLOW  -->
+    <section id="service" class="py-20">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <p class="text-sm font-semibold tracking-widest text-[var(--brand)] mb-2">PRODUCTION AGENCY</p>
+        <h2 class="text-3xl font-semibold mb-10">制作代行の進め方</h2>
+
+        <!-- FLOW：タイムライン -->
+        <div class="mx-auto max-w-4xl">
+          <!-- Step 1 -->
+          <div class="relative pb-10 md:pb-12 border-l-2 border-[color:rgba(220,38,38,0.3)] ml-5 md:ml-10">
+            <div class="absolute -left-5 md:-left-6 top-0 w-10 h-10 bg-[var(--brand)] rounded-full flex items-center justify-center text-white font-bold text-xl shadow-md">1</div>
+            <div class="ml-8 md:ml-12 p-5 bg-white rounded-2xl shadow-sm ring-1 ring-gray-100">
+              <h3 class="text-xl font-bold mb-2">ヒアリング &amp; 設計</h3>
+              <p class="text-gray-700">
+                商品内容・ターゲット層・必要な機能を整理し、最適なサイト構成とモックアップを設計します。
+              </p>
+              <p class="text-xs text-gray-500 mt-2 italic">※スケジュール・費用は事前合意のうえ進めます。</p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="relative pb-10 md:pb-12 border-l-2 border-[color:rgba(220,38,38,0.3)] ml-5 md:ml-10">
+            <div class="absolute -left-5 md:-left-6 top-0 w-10 h-10 bg-[var(--brand)] rounded-full flex items-center justify-center text-white font-bold text-xl shadow-md">2</div>
+            <div class="ml-8 md:ml-12 p-5 bg-white rounded-2xl shadow-sm ring-1 ring-gray-100">
+              <h3 class="text-xl font-bold mb-2">制作・実装</h3>
+              <p class="text-gray-700">
+                デザイン設計から実装、セキュリティ対策、ドメイン接続、商品登録まで一貫して対応します。
+              </p>
+              <p class="text-xs text-gray-500 mt-2 italic">※進行中の仕様追加は別見積にて承ります。</p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="relative pb-0 ml-5 md:ml-10">
+            <div class="absolute -left-5 md:-left-6 top-0 w-10 h-10 bg-[var(--brand)] rounded-full flex items-center justify-center text-white font-bold text-xl shadow-md">3</div>
+            <div class="ml-8 md:ml-12 p-5 bg-white rounded-2xl shadow-sm ring-1 ring-gray-100">
+              <h3 class="text-xl font-bold mb-2">公開</h3>
+              <p class="text-gray-700">
+                公開後は運営方法のレクチャーを実施します。サポート内容や期間は、ご要望に応じてご相談ください。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA バンド（brand統一） -->
+        <div class="mt-14 overflow-hidden rounded-3xl">
+          <div class="relative isolate bg-[var(--brand)]">
+            <div class="absolute inset-0 opacity-10 [background-image:radial-gradient(white_1px,transparent_1px)] [background-size:18px_18px]"></div>
+            <div class="container mx-auto px-4 py-8 md:py-10">
+              <div class="mx-auto max-w-4xl text-center text-white">
+                <h3 class="text-2xl md:text-3xl font-light mb-1">申込みはこちら</h3>
+                <p class="text-xl md:text-2xl font-extrabold mb-3">
+                  まずは、お気軽にお申し込みください。
+                </p>
+                <p class="text-sm md:text-base text-white/90">
+                  サイト構築・Stripe決済・SNS連携など、ご希望に沿った形で技術面を中心にしっかり伴走します。
+                </p>
+                <div class="mt-6">
+                  <a href="#contact"
+                     class="inline-flex min-w-[14rem] items-center justify-center rounded-full bg-white px-6 py-3 text-base font-extrabold text-[var(--brand)] shadow-lg transition hover:bg-gray-100">
+                    申し込む
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. 運営者本人も挑戦者（PROJECTS） -->
+    <section id="projects" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4 max-w-5xl">
+        <p class="text-sm font-semibold tracking-widest text-[var(--brand)] mb-2">PROJECTS</p>
+        <h2 class="text-3xl font-semibold mb-10">運営者も挑戦中</h2>
+        <div class="text-gray-700 mb-10 space-y-4 leading-relaxed">
+          <p>
+            運営者は、小学校教員として18年、食品会社の事務職として4年、
+            放課後等デイサービス職員として5年の経歴を持つ人物です。
+            まったく畑違いの分野からの挑戦であり、IT業界での勤務経験はありません。
+          </p>
+
+          <p>
+            プログラミングは教員時代に独学で学びました。
+            当時、パソコンクラブの顧問を務めていたこともあり、
+            「これからの時代、プログラミング教育は必須だ」との思いから、
+            見よう見まねで学び始めたのがきっかけです。
+          </p>
+
+          <p>
+            運営者自身もネット販売サービスの立ち上げと運営にチャレンジしている一個人です。
+            下記は、運営者自身が提供しているネットサービスになります。<br>
+            よろしければ、ぜひ一度覗いてみてください。
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="cursor-pointer group">
+            <div class="aspect-video bg-gray-200 w-full mb-3 flex items-center justify-center text-gray-500">Image（絵本販売）</div>
+            <p class="text-xs font-semibold text-gray-500">PLUS-BOOKS</p>
+            <p class="text-lg font-medium group-hover:text-[var(--brand)]">自作絵本のオンライン販売</p>
+          </div>
+          <div class="cursor-pointer group">
+            <div class="aspect-video bg-gray-200 w-full mb-3 flex items-center justify-center text-gray-500">Image（送迎予約）</div>
+            <p class="text-xs font-semibold text-gray-500">HOUKAGO-PLUS</p>
+            <p class="text-lg font-medium group-hover:text-[var(--brand)]">放課後等デイ 送迎予約システム</p>
+          </div>
+          <div class="cursor-pointer group">
+            <div class="aspect-video bg-gray-200 w-full mb-3 flex items-center justify-center text-gray-500">Image（英会話）</div>
+            <p class="text-xs font-semibold text-gray-500">PLUS-ENGLISH</p>
+            <p class="text-lg font-medium group-hover:text-[var(--brand)]">英会話学習サービス（音声練習・日記）</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="qa" class="py-16 bg-gray-100 text-gray-900">
+      <div class="container mx-auto px-4 text-center">
+        <!-- 見出し -->
+        <h3 class="text-2xl md:text-3xl font-semibold tracking-tight mb-4">
+          ご予算やサービスに関するご質問など、<br class="sm:hidden">お気軽にお問い合わせください。
+        </h3>
+
+        <!-- ボタン -->
+        <div class="mt-8 flex justify-center">
+          <a href="#contact" aria-label="お問い合わせフォームへ"
+             class="block w-full md:w-auto md:inline-flex md:min-w-[14rem] items-center justify-center rounded-full bg-[var(--brand)] px-8 py-4 text-base font-extrabold text-white shadow-lg transition hover:bg-[#b91c1c]">
+            問い合わせる
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 py-12">
+    <div class="container mx-auto px-4 grid md:grid-cols-2 gap-10">
+      <div>
+        <h5 class="text-2xl font-bold mb-4 text-[var(--brand)]">PLUS WORKS</h5>
+        <p class="text-sm">オンライン拠点（全国対応）／ 平日 11:00–18:00 目安</p>
+        <p class="text-xs italic mt-2">※現在は制作・技術支援に特化。売上コンサル/広告運用は未提供です。</p>
+      </div>
+      <div>
+        <h5 class="text-2xl font-bold mb-4 text-[var(--brand)]">INFORMATION</h5>
+        <ul class="text-sm space-y-1">
+          <li>提供：EC制作代行・E-learning</li>
+          <li>決済：クレジットカード／銀行振込（予定）</li>
+          <li>法務：特商法・プライバシーポリシーは別ページに掲載</li>
+        </ul>
+        <ul class="flex flex-wrap mt-6 text-xs font-medium space-x-4 border-t border-gray-700 pt-4">
+          <li><a href="#intro" class="hover:text-[var(--brand)]">事業紹介</a></li>
+          <li><a href="#reason" class="hover:text-[var(--brand)]">なぜネットショップか</a></li>
+          <li><a href="#elearn" class="hover:text-[var(--brand)]">E-learning</a></li>
+          <li><a href="#service" class="hover:text-[var(--brand)]">代行サービス</a></li>
+          <li><a href="#projects" class="hover:text-[var(--brand)]">運営者も挑戦中</a></li>
+          <li><a href="#qa" class="hover:text-[var(--brand)]">CONTACT</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Simple nav toggle script -->
+  <script>
+    const toggleBtn = document.getElementById('navToggle');
+    const mobileNav = document.getElementById('mobileNav');
+    const iconOpen = document.getElementById('iconOpen');
+    const iconClose = document.getElementById('iconClose');
+
+    function openMenu() {
+      mobileNav.classList.add('open');
+      mobileNav.style.maxHeight = mobileNav.scrollHeight + 'px';
+      mobileNav.style.opacity = '1';
+      mobileNav.style.transform = 'translateY(0)';
+      toggleBtn.setAttribute('aria-expanded', 'true');
+      mobileNav.setAttribute('aria-hidden', 'false');
+      iconOpen.classList.add('hidden');
+      iconClose.classList.remove('hidden');
+    }
+
+    function closeMenu() {
+      mobileNav.style.maxHeight = '0px';
+      mobileNav.style.opacity = '0';
+      mobileNav.style.transform = 'translateY(-4px)';
+      toggleBtn.setAttribute('aria-expanded', 'false');
+      mobileNav.setAttribute('aria-hidden', 'true');
+      iconOpen.classList.remove('hidden');
+      iconClose.classList.add('hidden');
+      setTimeout(() => mobileNav.classList.remove('open'), 320);
+    }
+
+    toggleBtn?.addEventListener('click', () => {
+      const isOpen = mobileNav.classList.contains('open') || parseFloat(mobileNav.style.maxHeight) > 0;
+      if (isOpen) { closeMenu(); } else { openMenu(); }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') { closeMenu(); toggleBtn.focus(); }
+    });
+
+    window.addEventListener('resize', () => {
+      if (mobileNav.classList.contains('open')) {
+        mobileNav.style.maxHeight = mobileNav.scrollHeight + 'px';
+      }
+    });
+  </script>
+</body>
+</html>
